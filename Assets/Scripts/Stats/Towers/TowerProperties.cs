@@ -24,6 +24,7 @@ namespace TMG.BloonsTD.Stats
 
         [SerializeField] private TowerUpgradeProperties _towerUpgradePropertiesPath1;
         [SerializeField] private TowerUpgradeProperties _towerUpgradePropertiesPath2;
+        [SerializeField] private TowerUpgradeProperties _towerUpgradePropertiesPath3;
         
         public string TowerName => _towerName;
         public int Cost => _cost;
@@ -67,6 +68,7 @@ namespace TMG.BloonsTD.Stats
         public float FreezeDuration => _freezeDuration;
         public TowerUpgradeProperties TowerUpgradePropertiesPath1 => _towerUpgradePropertiesPath1;
         public TowerUpgradeProperties TowerUpgradePropertiesPath2 => _towerUpgradePropertiesPath2;
+        public TowerUpgradeProperties TowerUpgradePropertiesPath3 => _towerUpgradePropertiesPath3;
         
         private void OnValidate()
         {
