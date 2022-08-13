@@ -34,11 +34,19 @@ namespace TMG.BloonsTD.UI
         [SerializeField] private TMP_Text _upgrade2NameText;
         [SerializeField] private TMP_Text _upgrade2CostText;
 
+        [Header("Upgrade 3")]
+        [SerializeField] private Button _upgrade3Button;
+        [SerializeField] private Image _upgrade3Icon;
+        [SerializeField] private TMP_Text _upgrade3NameText;
+        [SerializeField] private TMP_Text _upgrade3CostText;
+
         private UpgradeButtonDTO _upgradeButtonDTO1;
         private UpgradeButtonDTO _upgradeButtonDTO2;
+        private UpgradeButtonDTO _upgradeButtonDTO3;
         private TowerController _towerController;
         private TowerUpgrade _upgrade1;
         private TowerUpgrade _upgrade2;
+        private TowerUpgrade _upgrade3;
         private void Awake()
         {
             SetupEvents();
@@ -60,6 +68,13 @@ namespace TMG.BloonsTD.UI
                 CostText = _upgrade2CostText,
                 NameText = _upgrade2NameText,
                 Icon = _upgrade2Icon
+            };
+            _upgradeButtonDTO3 = new UpgradeButtonDTO
+            {
+                Button = _upgrade3Button,
+                CostText = _upgrade3CostText,
+                NameText = _upgrade3NameText,
+                Icon = _upgrade3Icon
             };
         }
 
@@ -90,9 +105,11 @@ namespace TMG.BloonsTD.UI
             var upgradeController = _towerController.TowerUpgradeController;
             _upgrade1 = upgradeController.Upgrades[0];
             _upgrade2 = upgradeController.Upgrades[1];
+            _upgrade3 = upgradeController.Upgrades[2];
             
             SetupUpgradeButton(_upgrade1, _upgradeButtonDTO1);
             SetupUpgradeButton(_upgrade2, _upgradeButtonDTO2);
+            SetupUpgradeButton(_upgrade3, _upgradeButtonDTO3);
             _gameController.OnMoneyChanged += OnMoneyChanged;
         }
 
@@ -106,6 +123,7 @@ namespace TMG.BloonsTD.UI
             _towerController = null;
             _upgrade1 = null;
             _upgrade2 = null;
+            _upgrade3 = null;
             _gameController.OnMoneyChanged -= OnMoneyChanged;
             _selectedTowerPanel.SetActive(false);
         }
@@ -115,6 +133,7 @@ namespace TMG.BloonsTD.UI
             if(!_selectedTowerPanel.activeSelf) {return;}
             SetupUpgradeButton(_upgrade1, _upgradeButtonDTO1);
             SetupUpgradeButton(_upgrade2, _upgradeButtonDTO2);
+            SetupUpgradeButton(_upgrade3, _upgradeButtonDTO3);
         }
         
         private void SetupUpgradeButton(TowerUpgrade upgrade, UpgradeButtonDTO upgradeButtonDTO)

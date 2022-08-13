@@ -22,9 +22,12 @@ namespace TMG.BloonsTD.Stats
         [SerializeField] private int _numberProjectiles;
         [SerializeField] private float _freezeDuration;
 
-        [SerializeField] private TowerUpgradeProperties _towerUpgradePropertiesPath1;
-        [SerializeField] private TowerUpgradeProperties _towerUpgradePropertiesPath2;
-        [SerializeField] private TowerUpgradeProperties _towerUpgradePropertiesPath3;
+        [SerializeField] private TowerUpgradeProperties _towerUpgradeProperties1Path1;
+        [SerializeField] private TowerUpgradeProperties _towerUpgradeProperties1Path2;
+        [SerializeField] private TowerUpgradeProperties _towerUpgradeProperties1Path3;
+        [SerializeField] private TowerUpgradeProperties _towerUpgradeProperties2Path1;
+        [SerializeField] private TowerUpgradeProperties _towerUpgradeProperties2Path2;
+        [SerializeField] private TowerUpgradeProperties _towerUpgradeProperties2Path3;
         
         public string TowerName => _towerName;
         public int Cost => _cost;
@@ -66,9 +69,12 @@ namespace TMG.BloonsTD.Stats
         public GameObject ProjectilePrefab => _projectilePrefab;
         public int NumberProjectiles => _numberProjectiles;
         public float FreezeDuration => _freezeDuration;
-        public TowerUpgradeProperties TowerUpgradePropertiesPath1 => _towerUpgradePropertiesPath1;
-        public TowerUpgradeProperties TowerUpgradePropertiesPath2 => _towerUpgradePropertiesPath2;
-        public TowerUpgradeProperties TowerUpgradePropertiesPath3 => _towerUpgradePropertiesPath3;
+        public TowerUpgradeProperties TowerUpgradeProperties1Path1 => _towerUpgradeProperties1Path1;
+        public TowerUpgradeProperties TowerUpgradeProperties1Path2 => _towerUpgradeProperties1Path2;
+        public TowerUpgradeProperties TowerUpgradeProperties1Path3 => _towerUpgradeProperties1Path3;
+        public TowerUpgradeProperties TowerUpgradeProperties2Path1 => _towerUpgradeProperties2Path1;
+        public TowerUpgradeProperties TowerUpgradeProperties2Path2 => _towerUpgradeProperties2Path2;
+        public TowerUpgradeProperties TowerUpgradeProperties2Path3 => _towerUpgradeProperties2Path3;
         
         private void OnValidate()
         {

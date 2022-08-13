@@ -15,12 +15,6 @@ namespace TMG.BloonsTD.Gameplay
 
         protected override void Attack(Vector3 targetLocation)
         {
-            if (targetLocation != Vector3.zero)
-            {
-                var towerRotation = GetOrientationToTarget(TowerPosition, targetLocation);
-                TowerController.transform.rotation = towerRotation;
-            }
-
             for (var i = 0; i < _numberProjectiles; i++)
             {
                 var projectileRotationDeg = (360 / _numberProjectiles) * i;
